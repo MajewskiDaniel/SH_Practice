@@ -3,8 +3,8 @@
  */
 
 // Load application styles
-import 'styles/index.scss';
-
+import "../assets/styles/index.scss";
+// console.log("works");
 // ================================
 // START YOUR APP HERE
 // ================================

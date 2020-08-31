@@ -1,0 +1,48 @@
+@import "variables";
+
+@mixin headline-text-black {
+  font-family: $header-font;
+  font-weight: $bold;
+  color: $text-color;
+  font-size: 70px;
+  line-height: 80px;
+}
+
+@mixin headline-text-violet {
+  font-family: $header-font;
+  font-weight: $bold;
+  color: $product-color;
+  font-size: 70px;
+  line-height: 80px;
+}
+
+@mixin h2 {
+  font-family: $header-font;
+  font-weight: $bold;
+  color: #000;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+@mixin h3 {
+  font-family: $header-font;
+  font-weight: $bold;
+  color: #000;
+  font-size: 19px;
+  line-height: 26px;
+}
+
+@mixin h4 {
+  font-family: $regular-font;
+  font-weight: $regular;
+  color: #000;
+  font-size: 17px;
+}
+
+@mixin paragraph {
+  font-family: $regular-font;
+  font-weight: $light;
+  color: #000;
+  font-size: 17px;
+  line-height: 25px;
+}
