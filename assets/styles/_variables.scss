@@ -5,10 +5,19 @@ $bcg-color: #f7f7f7;
 $secondary-color: #01ffcb;
 
 //Fonts
-$header-font: "Poppins";
-$regular-font: "Roboto";
+$headline-font: "Poppins", sans-serif;
+$regular-font: "Roboto", sans-serif;
 
 //Font-Weight
 $light: 300;
 $regular: 400;
 $bold: 700;
+
+//Metrics
+$x-small: 10px;
+$small: 20px;
+$base: 30px;
+$medium: 40px;
+$large: 60px;
+$x-large: 90px;
+$xx-large: 120px;

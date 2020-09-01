@@ -5,15 +5,220 @@
 @import "variables";
 @import "mixins";
 
-html {
+* {
   box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  background-color: green;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+// header
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .header__logo {
+    margin: 20px;
+  }
+  .header__menu {
+    @include h4;
+    line-height: 27px;
+    text-align: center;
+    margin: auto;
+    .header__menu--arrow {
+      margin-left: 10px;
+    }
+  }
+  .header__hamburger {
+    margin: 26px;
+  }
+}
+
+// main
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $bcg-color;
+
+  // streamline
+
+  .streamline {
+    &__header {
+      @include h2;
+      padding: $small;
+      color: $product-color;
+      font-size: 40px;
+      line-height: 50px;
+      padding-top: $large;
+      padding-bottom: $large;
+      background: url("/assets/images/desks2.png");
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      overflow: hidden;
+      .streamline__img {
+        width: 80%;
+        margin-left: $large;
+        transform: translate(0, 35%);
+      }
+    }
+    &__paragraph {
+      @include h4;
+      margin: $medium $small;
+      .streamline__stores {
+        margin: $medium 0;
+        display: flex;
+        justify-content: space-between;
+        .streamline__button {
+          border: none;
+          width: 150px;
+          height: 50px;
+          background-color: $text-color;
+          color: white;
+        }
+      }
+    }
+  }
+
+  // main features
+
+  .main-features {
+    width: 300%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    position: relative;
+    &__column {
+      margin: $large $base;
+      flex-basis: 33%;
+      h2 {
+        @include h2;
+        margin-bottom: $base;
+      }
+      p {
+        @include paragraph;
+      }
+    }
+    &__dots {
+      position: absolute; // dac display flex, row, space around
+      bottom: $base;
+      left: 50vw;
+      transform: translateX(-50%);
+      font-size: 60px;
+      height: 10px;
+      span {
+        cursor: pointer; //zamiast span dac div? albo display block?
+      }
+      .active {
+        color: $product-color;
+      }
+    }
+  }
+
+  //problem solving
+
+  .problem-solving {
+    position: relative;
+    &__header {
+      @include h4;
+      margin: $base;
+    }
+    &__wrapper {
+      width: 300%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      background-color: #fff;
+      .problem-solving__column {
+        margin: $large $base;
+        flex-basis: 33%;
+        img {
+          display: block;
+          margin: $base auto;
+          width: 70%;
+        }
+        h2 {
+          @include h3;
+          margin-bottom: $base;
+        }
+        p {
+          @include paragraph;
+          margin-bottom: $large;
+        }
+      }
+    }
+    &__dots {
+      position: absolute; // dac display flex, row, space around
+      bottom: $base;
+      left: 50vw;
+      transform: translateX(-50%);
+      font-size: 60px;
+      span {
+        cursor: pointer; //zamiast span dac div? albo display block?
+      }
+      .active {
+        color: $product-color;
+      }
+    }
+  }
+
+  // features
+
+  .features {
+    margin-top: $large;
+    position: relative;
+    &__header {
+      @include h4;
+      line-height: $base;
+      margin: $base;
+    }
+    &__bcg {
+      height: 360px;
+      background-image: url("/assets/images/mob_features_bg.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &__desc {
+      background-color: $product-color;
+      .features__header-big {
+        @include h2;
+        font-size: 40px;
+        letter-spacing: -2px;
+        padding: $large $small $base;
+        color: $bcg-color;
+      }
+      .features__text {
+        @include paragraph;
+        color: $bcg-color;
+        padding: $small $small $large;
+      }
+      .features__download {
+        @include h4;
+        color: $bcg-color;
+        text-align: center;
+        padding: $small;
+        border-top: dotted $bcg-color 1px;
+      }
+    }
+    &__nav {
+      position: absolute;
+      width: 100%;
+    }
+  }
 }
