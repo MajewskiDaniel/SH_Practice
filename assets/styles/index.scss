@@ -16,8 +16,6 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
 }
 
@@ -72,7 +70,7 @@ main {
       .streamline__img {
         width: 80%;
         margin-left: $large;
-        transform: translate(0, 35%);
+        transform: translate(0, 75px);
       }
     }
     &__paragraph {
@@ -104,7 +102,7 @@ main {
 
     position: relative;
     &__column {
-      margin: $large $base;
+      margin: $large $small;
       flex-basis: 33%;
       h2 {
         @include h2;
@@ -116,7 +114,7 @@ main {
     }
     &__dots {
       position: absolute; // dac display flex, row, space around
-      bottom: $base;
+      bottom: $large;
       left: 50vw;
       transform: translateX(-50%);
       font-size: 60px;
@@ -136,7 +134,7 @@ main {
     position: relative;
     &__header {
       @include h4;
-      margin: $base;
+      margin: $base $small;
     }
     &__wrapper {
       width: 300%;
@@ -146,12 +144,13 @@ main {
       justify-content: space-between;
       background-color: #fff;
       .problem-solving__column {
-        margin: $large $base;
+        margin: $large $small;
         flex-basis: 33%;
         img {
           display: block;
           margin: $base auto;
           width: 70%;
+          max-width: 205px;
         }
         h2 {
           @include h3;
@@ -186,7 +185,7 @@ main {
     &__header {
       @include h4;
       line-height: $base;
-      margin: $base;
+      margin: $base $small;
     }
     &__bcg {
       height: 360px;
@@ -238,9 +237,15 @@ main {
       }
     }
     &__phone {
-      position: absolute;
-      top: 155px;
-      left: 55px;
+      .features__phone--small {
+        position: absolute;
+        top: 155px;
+        left: 50%;
+        transform: translateX(-130px);
+      }
+      .features__phone--big {
+        display: none;
+      }
     }
   }
 
@@ -285,6 +290,7 @@ main {
       align-items: center;
       padding: 0 $small;
       border-top: solid 1px $bcg-color;
+      border-bottom: solid 1px $bcg-color;
       p {
         @include h3;
         height: $large;
@@ -293,6 +299,84 @@ main {
     }
     &__item.active p {
       color: $product-color;
+    }
+  }
+
+  // form
+
+  .form {
+    display: none;
+  }
+}
+
+// footer
+
+footer {
+  height: 200px;
+  width: 100%;
+  background-color: $product-color;
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 480px) {
+  main .streamline__paragraph .streamline__stores {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) {
+  main .streamline__header {
+    background: url("/assets/images/desks.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 500px;
+    position: relative;
+    .streamline__img {
+      width: 50%;
+      transform: translate(250px, 75px);
+    }
+  }
+  main .features {
+    .features__bcg {
+      background-image: url("/assets/images/Layer\ 78.png");
+    }
+    .features__desc {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .features__header-big {
+        flex-basis: 50%;
+      }
+      .features__text {
+        flex-basis: 50%;
+        padding: $large $small $small;
+      }
+      .features__download {
+        flex-basis: 100%;
+      }
+    }
+    .features__phone {
+      .features__phone--small {
+        left: 70%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  main .features {
+    .features__phone {
+      .features__phone--small {
+        display: none;
+      }
+      .features__phone--big {
+        position: absolute;
+        display: block;
+        height: 80%;
+        top: 0px;
+        left: 60%;
+      }
     }
   }
 }
