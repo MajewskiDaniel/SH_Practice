@@ -218,7 +218,81 @@ main {
     }
     &__nav {
       position: absolute;
+      display: flex;
+      justify-content: space-between;
       width: 100%;
+      top: 430px;
+      .nav__arrow--back {
+        height: $medium;
+        width: $medium;
+        img {
+          width: 100%;
+        }
+      }
+      .nav__arrow--front {
+        height: $medium;
+        width: $medium;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &__phone {
+      position: absolute;
+      top: 155px;
+      left: 55px;
+    }
+  }
+
+  // booking
+
+  .booking {
+    padding-top: $medium;
+    position: relative;
+    background-color: #fff;
+    &__text {
+      margin: $small;
+      .booking__header {
+        @include h2;
+      }
+      .booking__paragraph {
+        @include paragraph;
+        margin: $medium 0 0;
+      }
+    }
+    &__details {
+      @include h4;
+      position: absolute;
+      left: 40%;
+      top: 55%;
+      line-height: $base;
+      .details__bold {
+        font-weight: 700;
+      }
+    }
+  }
+
+  // drop down list
+
+  .drop-down-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    &__item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 $small;
+      border-top: solid 1px $bcg-color;
+      p {
+        @include h3;
+        height: $large;
+        line-height: $large;
+      }
+    }
+    &__item.active p {
+      color: $product-color;
     }
   }
 }
