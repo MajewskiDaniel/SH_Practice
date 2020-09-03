@@ -41,8 +41,8 @@ const featuresArowFront = document.querySelector(".features__nav .nav__arrow--fr
 const featuresHeader = document.querySelector(".features__header-big");
 const featuresText = document.querySelector(".features__text");
 const featuresBcg = document.querySelector(".features__bcg");
-let featuresScreenBack = document.querySelector(".screen__back");
-let featuresScreenFront = document.querySelector(".screen__front");
+let featuresScreenSlide = document.querySelector(".screen__back");
+let featuresScreenBack = document.querySelector(".screen__front");
 
 let index = 0;
 
@@ -68,7 +68,7 @@ featuresArowBack.addEventListener("click", () => {
   index--;
   if (index < 0) index = features.length - 1;
   featuresBcg.style.backgroundImage = features[index].url;
-  featuresScreenBack.style.transform = "translateX(0px)";
+  //   featuresScreenBack.style.transform = "translateX(0px)";
   fadeOut();
   setTimeout(() => {
     featuresHeader.innerText = features[index].title;
@@ -81,10 +81,9 @@ featuresArowFront.addEventListener("click", () => {
   index++;
   if (index > features.length - 1) index = 0;
   featuresBcg.style.backgroundImage = features[index].url;
-  featuresScreenBack.style.transform = "translateX(0px)";
-  featuresScreenFront = featuresScreenBack;
-  //   featuresScreenBack.style.transform = "translateX(246px)";
-  featuresScreenBack = features[index].screen;
+  featuresScreenSlide.style.transform = "translateX(0px)";
+  featuresScreenBack = featuresScreenSlide;
+  featuresScreenSlide = features[index].screen;
   fadeOut();
   setTimeout(() => {
     featuresHeader.innerText = features[index].title;
